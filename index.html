@@ -46,15 +46,26 @@ body{background:#050505;min-height:100vh;display:flex;flex-direction:column;alig
 <p class="slogan">ты забыл, но мы помним</p>
 </div>
 <div class="buttons">
-<a href="go.html?url=https://t.me/kapolam" class="btn btn-neon"><span class="title">🌍 GEO</span><span class="desc">Геолокация и карты</span></a>
-<a href="go.html?url=https://t.me/+A302DQ76v3kxMjE1" class="btn btn-white"><span class="title">📁 ПРОЕКТ</span><span class="desc">Основной проект</span></a>
-<a href="go.html?url=http://t.me/antiseach_bot" class="btn btn-neon"><span class="title">🔍 БОТ ПОИСК</span><span class="desc">Поиск информации</span></a>
-<a href="go.html?url=https://t.me/+e0Uj8Cmp8FA0ZGM1" class="btn btn-white"><span class="title">💬 ФОРУМ</span><span class="desc">Общение и обсуждения</span></a>
+<a href="#" class="btn btn-neon" onclick="openTG('https://t.me/kapolam');return false"><span class="title">🌍 GEO</span><span class="desc">Геолокация и карты</span></a>
+<a href="#" class="btn btn-white" onclick="openTG('https://t.me/+A302DQ76v3kxMjE1');return false"><span class="title">📁 ПРОЕКТ</span><span class="desc">Основной проект</span></a>
+<a href="#" class="btn btn-neon" onclick="openTG('http://t.me/antiseach_bot');return false"><span class="title">🔍 БОТ ПОИСК</span><span class="desc">Поиск информации</span></a>
+<a href="#" class="btn btn-white" onclick="openTG('https://t.me/+e0Uj8Cmp8FA0ZGM1');return false"><span class="title">💬 ФОРУМ</span><span class="desc">Общение и обсуждения</span></a>
 </div>
 <div class="contact">
-<a href="https://t.me/kepber">СВЯЗЬ: @KEPBER</a>
+<a href="#" onclick="openTG('https://t.me/kepber');return false">СВЯЗЬ: @KEPBER</a>
 </div>
 <script>
+function openTG(url) {
+var tg = url.replace("https://t.me/","tg://resolve?domain=").replace("http://t.me/","tg://resolve?domain=").replace("+","joinchat=");
+var a = document.createElement("a");
+a.href = tg;
+a.style.display = "none";
+document.body.appendChild(a);
+a.click();
+setTimeout(function(){
+window.location.href = url;
+}, 1000);
+}
 const p=document.getElementById("particles");
 for(let i=0;i<25;i++){
 let d=document.createElement("div");
