@@ -46,13 +46,13 @@ body{background:#050505;min-height:100vh;display:flex;flex-direction:column;alig
 <p class="slogan">ты забыл, но мы помним</p>
 </div>
 <div class="buttons">
-<a href="tg://resolve?domain=kapolam" class="btn btn-neon"><span class="title">🌍 GEO</span><span class="desc">Геолокация и карты</span></a>
-<a href="tg://join?invite=A302DQ76v3kxMjE1" class="btn btn-white"><span class="title">📁 ПРОЕКТ</span><span class="desc">Основной проект</span></a>
-<a href="tg://resolve?domain=antiseach_bot" class="btn btn-neon"><span class="title">🔍 БОТ ПОИСК</span><span class="desc">Поиск информации</span></a>
-<a href="tg://join?invite=e0Uj8Cmp8FA0ZGM1" class="btn btn-white"><span class="title">💬 ФОРУМ</span><span class="desc">Общение и обсуждения</span></a>
+<a href="https://t.me/kapolam" target="_blank" rel="noopener" class="btn btn-neon"><span class="title">🌍 GEO</span><span class="desc">Геолокация и карты</span></a>
+<a href="https://t.me/+A302DQ76v3kxMjE1" target="_blank" rel="noopener" class="btn btn-white"><span class="title">📁 ПРОЕКТ</span><span class="desc">Основной проект</span></a>
+<a href="https://t.me/antiseach_bot" target="_blank" rel="noopener" class="btn btn-neon"><span class="title">🔍 БОТ ПОИСК</span><span class="desc">Поиск информации</span></a>
+<a href="https://t.me/+e0Uj8Cmp8FA0ZGM1" target="_blank" rel="noopener" class="btn btn-white"><span class="title">💬 ФОРУМ</span><span class="desc">Общение и обсуждения</span></a>
 </div>
 <div class="contact">
-<a href="tg://resolve?domain=kepber">СВЯЗЬ: @KEPBER</a>
+<a href="https://t.me/kepber" target="_blank" rel="noopener">СВЯЗЬ: @KEPBER</a>
 </div>
 <script>
 const p=document.getElementById("particles");
@@ -67,6 +67,10 @@ d.style.height=d.style.width;
 p.appendChild(d);
 }
 document.querySelectorAll(".btn").forEach(b=>{
+b.addEventListener("click",function(e){
+e.preventDefault();
+window.open(this.href,'_blank');
+});
 b.addEventListener("touchstart",function(){
 if(navigator.vibrate)navigator.vibrate(10);
 });
